@@ -105,11 +105,7 @@ endif()
 ###############################################################################
 # Default shared libraries
 ###############################################################################
-option(BUILD_SHARED_LIBS
-    "Global flag to cause add_library() to create shared libraries if on. \
-    If set to true, this will cause all libraries to be built shared \
-    unless the library was explicitly added as a static library."
-    ON)
+option(BUILD_SHARED_LIBS "Global flag to cause add_library() to create shared libraries if on.  If set to true, this will cause all libraries to be built shared unless the library was explicitly added as a static library." ON)
 
 ###############################################################################
 # Load external eProsima projects.
