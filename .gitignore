@@ -25,3 +25,4 @@ cscope.out
 *.pyc
 # Installers
 *.tar.gz
+artifacts
