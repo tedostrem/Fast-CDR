@@ -14,6 +14,7 @@ ${LIB_OUTPUT} :
 arm : 
 	docker run -it --rm \
 		-v $(shell pwd):/build \
+		-e VERSION=$(shell git rev-parse --short HEAD) \
 		-e HOST_USER=$(shell id -u) \
 		-e HOST_GROUP=$(shell id -g) \
 		vincross/xcompile \
@@ -22,7 +23,7 @@ arm :
 deb : ${DEB}
 
 ${DEB} : ${LIB_OUTPUT}
-	fpm -p ${DEB} -a armhf -f -s dir -t deb --deb-no-default-config-files -C artifacts --name fastcdr --version $(shell git rev-parse --short HEAD) --iteration 1 --description "Fast-CDR" .
+	fpm -p ${DEB} -a armhf -f -s dir -t deb --deb-no-default-config-files -C artifacts --name fastcdr --version ${VERSION} --iteration 1 --description "Fast-CDR" .
 	sudo chown -R ${HOST_USER}:${HOST_GROUP} .
 
 clean :
