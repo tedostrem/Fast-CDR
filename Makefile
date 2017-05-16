@@ -22,7 +22,7 @@ arm :
 deb : ${DEB}
 
 ${DEB} : ${LIB_OUTPUT}
-	fpm -a armhf -f -s dir -t deb --deb-no-default-config-files -C artifacts --name fastcdr --version $(shell git rev-parse --short HEAD) --iteration 1 --description "Fast-CDR" -p ${DEB} .
+	fpm -p ${DEB} -a armhf -f -s dir -t deb --deb-no-default-config-files -C artifacts --name fastcdr --version $(shell git rev-parse --short HEAD) --iteration 1 --description "Fast-CDR" .
 	sudo chown -R ${HOST_USER}:${HOST_GROUP} .
 
 clean :
