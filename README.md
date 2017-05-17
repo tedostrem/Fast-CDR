@@ -2,7 +2,7 @@
 ```
 $ git clone git@github.com:tedostrem/Fast-CDR.git 
 $ cd Fast-CDR
-$ make arm # Installs into artifacts/
+$ make arm # Spits out a debian package for ARM architecture 
 ```
 
 # Introduction #
