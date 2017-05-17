@@ -1,5 +1,5 @@
-DEB := fastcdr_${VERSION}-1_armhf.deb
-ARTIFACTS_DIR := artifacts/usr/local
+DEB := fastcdr_${VERSION}_armhf.deb
+ARTIFACTS_DIR := artifacts/usr
 LIB_OUTPUT := ${ARTIFACTS_DIR}/lib/libfastcdr.so
 
 .PHONY : arm build clean deb
